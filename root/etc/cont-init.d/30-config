@@ -1,0 +1,28 @@
+#!/usr/bin/with-contenv bash
+
+# Create Folders & Simlinks, if missing
+if [ ! -d "/config/ca_certificates" ]; then
+	mkdir -p /config/ca_certificates/
+fi
+if [ ! -d "/config/certs" ]; then
+	mkdir -p /config/certs/
+fi
+if [ ! -d "/config/conf.d" ]; then
+	mkdir -p /config/conf.d/
+	cp /defaults/conf.d/websockets.conf /config/conf.d/websockets.conf
+fi
+if [ ! -d "/config/data" ]; then
+	mkdir -p /config/data/
+fi
+
+# Copy over default files
+if [ ! -f "/config/mosquitto.conf" ]; then
+    cp /defaults/mosquitto.conf /config/mosquitto.conf
+fi
+if [ ! -f "/config/mosquitto.conf.example" ]; then
+    cp /defaults/mosquitto.conf.example /config/mosquitto.conf.example
+fi
+
+# permissions
+chown -R abc:abc \
+	/config
