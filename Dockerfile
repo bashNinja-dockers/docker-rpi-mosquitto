@@ -1,5 +1,5 @@
-#FROM lsiobase/alpine.armhf:edge
-FROM lsiobase/alpine
+FROM lsiobase/alpine.armhf:edge
+#FROM lsiobase/alpine
 
 # set version label
 ARG BUILD_DATE
