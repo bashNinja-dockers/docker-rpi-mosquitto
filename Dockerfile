@@ -9,13 +9,10 @@ LABEL maintainer="Mike Weaver"
 
 
 RUN \
-  echo "**** install build packages ****" && \
+ echo "**** install build packages ****" && \
  apk add --no-cache \
 	mosquitto \
-	mosquitto-clients && \
- echo "**** cleanup ****" && \
- rm -rf \
-	/root/.cache
+	mosquitto-clients
 
 # add local files
 COPY root/ /
