@@ -8,8 +8,6 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="Mike Weaver"
 
 
-RUN apk --no-cache add mosquitto mosquitto-clients
-
 RUN \
   echo "**** install build packages ****" && \
  apk add --no-cache \
